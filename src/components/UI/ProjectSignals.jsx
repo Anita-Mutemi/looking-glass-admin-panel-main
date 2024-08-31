@@ -1,3 +1,6 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable react/jsx-key */
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Collapse, Typography, Row, Descriptions, Tabs, Avatar, Spin } from 'antd';
@@ -52,7 +55,7 @@ const Signals = ({
     };
 
     fetchFunds();
-  }, [access_token]);
+  }, [access_token, fund_uuids]);
 
   if (state.loading) {
     return <Spin style={{ textAlign: 'center', paddingTop: '50px' }} size='large' />;

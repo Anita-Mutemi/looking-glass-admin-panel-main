@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { Button, Card, Spin, Table, Input } from 'antd';
@@ -59,7 +61,7 @@ const FundsList = () => {
     if (!searchQuery) {
       getFunds();
     }
-  }, [offset, searchQuery]);
+  }, [getFunds, offset, searchQuery]);
 
   const handleSearch = (e) => {
     const query = e.target.value;

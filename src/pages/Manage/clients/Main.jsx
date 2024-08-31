@@ -1,11 +1,12 @@
-import { useState, useEffect } from 'react';
-import { useSelector } from 'react-redux';
-import { Spin } from 'antd'; // Import the Spin component
-import httpService from '../../../services/http.service';
+/* eslint-disable no-unused-vars */
+import { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
+import { Spin } from "antd"; // Import the Spin component
+import httpService from "../../../services/http.service";
 
-import Clients from './Clients';
+import Clients from "./Clients";
 
-const Main = ({organizations, setOrganizations, loading, setLoading}) => {
+const Main = ({ organizations, setOrganizations, loading, setLoading }) => {
   // const { access_token } = useSelector((state) => state.user);
 
   // const [organizations, setOrganizations] = useState([]);
@@ -31,10 +32,10 @@ const Main = ({organizations, setOrganizations, loading, setLoading}) => {
   // }, [access_token]);
 
   return (
-    <div style={{ width: '100%' }}>
+    <div style={{ width: "100%" }}>
       {/* Conditionally render the loader while loading */}
       {loading ? (
-        <Spin size='large' tip='Loading...' style={{ marginTop: '20px' }} />
+        <Spin size="large" tip="Loading..." style={{ marginTop: "20px" }} />
       ) : (
         <Clients organizations={organizations} />
       )}

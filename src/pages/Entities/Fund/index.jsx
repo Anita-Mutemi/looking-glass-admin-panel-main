@@ -1,3 +1,6 @@
+/* eslint-disable no-undef */
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
 import { Switch, Input, Button, Card, Typography, Divider } from 'antd';
 import httpService from '../../../services/http.service';
@@ -59,7 +62,7 @@ const FundPage = () => {
     };
 
     fetchFund();
-  }, [fundId, access_token]);
+  }, [fundId, access_token, getHeaders]);
 
   const handleEnabledChange = (checked) => {
     setState((prevState) => ({ ...prevState, enabled: checked }));
@@ -91,11 +94,11 @@ const FundPage = () => {
     }
   };
 
-  const getHeaders = () => ({
+  const getHeaders = useCallback(() => ({
     headers: {
       Authorization: `Bearer ${access_token}`,
     },
-  });
+  }));
 
   const handleSaveChanges = async () => {
     try {

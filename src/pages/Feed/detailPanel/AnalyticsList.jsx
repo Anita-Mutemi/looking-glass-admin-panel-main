@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { Collapse, List, Descriptions } from 'antd';
 import moment from 'moment';
 

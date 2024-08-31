@@ -15,7 +15,7 @@ const Login = () => {
 
   useEffect(() => {
     dispatch(getUserDetails());
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     if (access_token && userInfo) {

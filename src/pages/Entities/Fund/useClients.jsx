@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from 'react';
 import { message } from 'antd';
 import { useFetchClients } from '../../../hooks/useFetchClients';

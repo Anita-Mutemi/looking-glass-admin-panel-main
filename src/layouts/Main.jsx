@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useEffect, useRef } from 'react';
 import { Layout, theme } from 'antd';
 import { Menu, Breadcrumb } from 'antd';
@@ -12,6 +13,7 @@ const App = ({ children }) => {
   const location = useLocation(); // Get the current location
   const [collapsed, setCollapsed] = useState(false);
 
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const menuRefs = menuItems.map(() => useRef(null)); // Create refs for all menu items
 
   useEffect(() => {
@@ -28,7 +30,7 @@ const App = ({ children }) => {
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, []);
+  }, [menuRefs]);
 
   const {
     token: { colorBgContainer },

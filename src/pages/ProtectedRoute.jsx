@@ -7,6 +7,7 @@ import Box from '@mui/material/Box';
 import LinearProgress from '@mui/material/LinearProgress';
 
 const ProtectedRoute = () => {
+  // eslint-disable-next-line no-unused-vars
   const { userInfo, access_token, loading } = useSelector((state) => state.user);
 
   const dispatch = useDispatch();

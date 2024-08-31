@@ -1,3 +1,5 @@
+/* eslint-disable react/jsx-key */
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
 import {
   Card,

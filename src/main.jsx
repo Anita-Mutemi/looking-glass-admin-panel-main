@@ -1,37 +1,38 @@
-// import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
-import Main from '../src/layouts/Main';
-import Home from './pages/Home';
-import Error from './pages/Error';
-import ProtectedRoute from './pages/ProtectedRoute';
-import Test from './pages/Feed/Test';
-import ClientUsers from './pages/Manage/ClientUsers';
-import Collections from './pages/Collections';
-import ClientEmails from './pages/Manage/ClientEmails';
-import Feed from './pages/Feed';
-import SourceB from './pages/Discovery/SourceB';
-import ExtensionLogs from './pages/Discovery/ExtensionLogs';
-import ProjectMatching from './pages/Matching/ProjectMatching';
-import ReconciliateInvestors from './pages/Matching/ReconciliateInvestors';
-import ReconciliatePersonals from './pages/Matching/ReconciliatePersonals';
-import ReconciliateProjects from './pages/Matching/ReconciliateProjects';
-import SourceBUploads from './pages/Uploads/SourceBUploads';
-import { store } from './redux/store';
-import { Provider } from 'react-redux';
-import Login from './pages/Login';
-import Logout from './pages/Logout';
-import 'antd/dist/reset.css';
-import './index.css';
-import { CookiesProvider } from 'react-cookie';
-import { GeneralErrorBoundary } from './components/UI/GeneralErrorBoundry';
-import InvestorProfile from './pages/Entities/Investor';
-import FundPage from './pages/Entities/Fund';
-import FundListPage from './pages/FundsList';
-import InvestorListPage from './pages/InvestorList';
-import ProjectPage from './pages/Entities/Project';
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+// eslint-disable-next-line no-unused-vars
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import Main from "../src/layouts/Main";
+import Home from "./pages/Home";
+import Error from "./pages/Error";
+import ProtectedRoute from "./pages/ProtectedRoute";
+import Test from "./pages/Feed/Test";
+import ClientUsers from "./pages/Manage/ClientUsers";
+import Collections from "./pages/Collections";
+import ClientEmails from "./pages/Manage/ClientEmails";
+import Feed from "./pages/Feed";
+import SourceB from "./pages/Discovery/SourceB";
+import ExtensionLogs from "./pages/Discovery/ExtensionLogs";
+import ProjectMatching from "./pages/Matching/ProjectMatching";
+import ReconciliateInvestors from "./pages/Matching/ReconciliateInvestors";
+import ReconciliatePersonals from "./pages/Matching/ReconciliatePersonals";
+import ReconciliateProjects from "./pages/Matching/ReconciliateProjects";
+import SourceBUploads from "./pages/Uploads/SourceBUploads";
+import { store } from "./redux/store";
+import { Provider } from "react-redux";
+import Login from "./pages/Login";
+import Logout from "./pages/Logout";
+import "antd/dist/reset.css";
+import "./index.css";
+import { CookiesProvider } from "react-cookie";
+import { GeneralErrorBoundary } from "./components/UI/GeneralErrorBoundry";
+import InvestorProfile from "./pages/Entities/Investor";
+import FundPage from "./pages/Entities/Fund";
+import FundListPage from "./pages/FundsList";
+import InvestorListPage from "./pages/InvestorList";
+import ProjectPage from "./pages/Entities/Project";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 // https://admin.alphaterminal.pro/login
 // content-length
@@ -55,7 +56,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: (
       <Main>
         <Outlet />
@@ -64,39 +65,39 @@ const router = createBrowserRouter([
     errorElement: <Error />,
     children: [
       {
-        path: '/',
+        path: "/",
         element: <ProtectedRoute />,
         children: [
           {
-            path: '/',
+            path: "/",
             element: <Home />,
           },
           {
-            path: '/clients',
+            path: "/clients",
             element: <ClientUsers />,
           },
           {
-            path: '/investor/:id',
+            path: "/investor/:id",
             element: <InvestorProfile />,
           },
           {
-            path: '/fund/:id',
+            path: "/fund/:id",
             element: <FundPage />,
           },
           {
-            path: '/funds',
+            path: "/funds",
             element: <FundListPage />,
           },
           {
-            path: '/investors',
+            path: "/investors",
             element: <InvestorListPage />,
           },
           {
-            path: '/project/:id',
+            path: "/project/:id",
             element: <ProjectPage />,
           },
           {
-            path: '/feed',
+            path: "/feed",
             element: (
               <GeneralErrorBoundary>
                 <Feed />
@@ -104,48 +105,48 @@ const router = createBrowserRouter([
             ),
           },
           {
-            path: '/feedTest',
+            path: "/feedTest",
             element: <Test />,
           },
           {
-            path: '/Collections',
+            path: "/Collections",
             element: <Collections />,
           },
           {
-            path: '/emails',
+            path: "/emails",
             element: <ClientEmails />,
           },
           {
-            path: '/discovery', // Update the path to match /discovery
+            path: "/discovery", // Update the path to match /discovery
             children: [
               {
-                path: 'source_b', // Use a relative path without the /discovery prefix
+                path: "source_b", // Use a relative path without the /discovery prefix
                 element: <SourceB />,
               },
               {
-                path: 'extension', // Use a relative path without the /discovery prefix
+                path: "extension", // Use a relative path without the /discovery prefix
                 element: <ExtensionLogs />,
               },
             ],
           },
           {
-            path: '/matching',
+            path: "/matching",
             element: <ProjectMatching />,
           },
           {
-            path: '/reconciliate/investors',
+            path: "/reconciliate/investors",
             element: <ReconciliateInvestors />,
           },
           {
-            path: '/reconciliate/personals',
+            path: "/reconciliate/personals",
             element: <ReconciliatePersonals />,
           },
           {
-            path: '/reconciliate/projects',
+            path: "/reconciliate/projects",
             element: <ReconciliateProjects />,
           },
           {
-            path: '/linkedin/upload',
+            path: "/linkedin/upload",
             element: <SourceBUploads />,
           },
         ],
@@ -153,22 +154,22 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: '/login',
+    path: "/login",
     element: <Login />,
     errorElement: <Error />,
   },
   {
-    path: '/logout',
+    path: "/logout",
     element: <Logout />,
     errorElement: <Error />,
   },
 ]);
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <CookiesProvider>
     <Provider store={store}>
       <RouterProvider router={router} />
       <ToastContainer />
     </Provider>
-  </CookiesProvider>,
+  </CookiesProvider>
 );

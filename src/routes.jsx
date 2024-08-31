@@ -1,12 +1,8 @@
-import React from 'react';
+// eslint-disable-next-line no-unused-vars
+import React from "react";
 import {
   PieChartOutlined,
-  UserOutlined,
-  MailOutlined,
-  DatabaseOutlined,
-  LoginOutlined,
-  TeamOutlined,
-  NodeIndexOutlined,
+  TeamOutlined, 
   VerticalAlignBottomOutlined,
   UsergroupAddOutlined,
   LogoutOutlined,
@@ -14,12 +10,22 @@ import {
   CloudUploadOutlined,
   CodeOutlined,
   CalculatorOutlined,
-} from '@ant-design/icons';
+} from "@ant-design/icons";
 
 export const links = [
-  { path: '/', label: 'Home', icon: <PieChartOutlined />, key: 'Home'},
-  { path: '/feed', label: 'Projects Feed', icon: <CalculatorOutlined />, key: 'Projects'},
-  { path: '/clients', label: 'Client Users', icon: <UsergroupAddOutlined />, key: 'Client'},
+  { path: "/", label: "Home", icon: <PieChartOutlined />, key: "Home" },
+  {
+    path: "/feed",
+    label: "Projects Feed",
+    icon: <CalculatorOutlined />,
+    key: "Projects",
+  },
+  {
+    path: "/clients",
+    label: "Client Users",
+    icon: <UsergroupAddOutlined />,
+    key: "Client",
+  },
   // { path: '/emails', label: 'Client Emails', icon: <MailOutlined /> },
   // {
   // label: 'Discovery',
@@ -30,15 +36,35 @@ export const links = [
   // ],
   // },
   {
-    path: '/discovery/source_b',
-    label: 'Manual submission',
+    path: "/discovery/source_b",
+    label: "Manual submission",
     icon: <VerticalAlignBottomOutlined />,
-    key: 'submission'
+    key: "submission",
   },
-  { path: '/collections', label: 'Collections', icon: <CalculatorOutlined />, key: 'Collections'},
-  { path: '/funds', label: 'Funds', icon: <InsertRowLeftOutlined />, key: 'Funds'},
-  { path: '/investors', label: 'Investors', icon: <TeamOutlined />, key: 'Investors'},
-  { path: '/discovery/extension', label: 'Extension Logs', icon: <CodeOutlined />, key: 'Extension'},
+  {
+    path: "/collections",
+    label: "Collections",
+    icon: <CalculatorOutlined />,
+    key: "Collections",
+  },
+  {
+    path: "/funds",
+    label: "Funds",
+    icon: <InsertRowLeftOutlined />,
+    key: "Funds",
+  },
+  {
+    path: "/investors",
+    label: "Investors",
+    icon: <TeamOutlined />,
+    key: "Investors",
+  },
+  {
+    path: "/discovery/extension",
+    label: "Extension Logs",
+    icon: <CodeOutlined />,
+    key: "Extension",
+  },
   // { path: '/matching', label: 'Project Matching', icon: <NodeIndexOutlined /> },
   // {
   //   label: 'Reconciliate',
@@ -61,15 +87,20 @@ export const links = [
   //     },
   //   ],
   // },
-  { path: '/linkedin/upload', label: 'Investors Upload', icon: <CloudUploadOutlined />, key: 'linkedin_upload' },
+  {
+    path: "/linkedin/upload",
+    label: "Investors Upload",
+    icon: <CloudUploadOutlined />,
+    key: "linkedin_upload",
+  },
   // { path: '/login', label: 'Login', icon: <LoginOutlined /> },
-  { path: '/logout', label: 'Logout', icon: <LogoutOutlined />, key: 'logout' },
+  { path: "/logout", label: "Logout", icon: <LogoutOutlined />, key: "logout" },
 ];
 
 // Ensure children property is defined for each menu item
 links.forEach((item) => {
   if (!item.children) {
-    item.children = ''; // Set children property to an empty string if undefined
+    item.children = ""; // Set children property to an empty string if undefined
   }
 });
 

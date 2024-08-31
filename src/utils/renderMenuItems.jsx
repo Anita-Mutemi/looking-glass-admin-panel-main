@@ -1,6 +1,7 @@
-import React from 'react';
-import { Menu } from 'antd';
-import { Link } from 'react-router-dom';
+// eslint-disable-next-line no-unused-vars
+import React from "react";
+import { Menu } from "antd";
+import { Link } from "react-router-dom";
 
 // const renderMenuItems = (menuItems) => {
 
@@ -28,9 +29,17 @@ const renderMenuItems = (menuItems, refs = [], startIndex = 0) => {
     const currentShortcut = startIndex + index + 1; // Compute the shortcut for the current item
 
     if (menuItem.children && Array.isArray(menuItem.children)) {
-      const childrenItems = renderMenuItems(menuItem.children, refs, currentShortcut);
+      const childrenItems = renderMenuItems(
+        menuItem.children,
+        refs,
+        currentShortcut
+      );
       return (
-        <Menu.SubMenu key={menuItem.key} icon={menuItem.icon} title={menuItem.label}>
+        <Menu.SubMenu
+          key={menuItem.key}
+          icon={menuItem.icon}
+          title={menuItem.label}
+        >
           {childrenItems}
         </Menu.SubMenu>
       );
@@ -38,8 +47,8 @@ const renderMenuItems = (menuItems, refs = [], startIndex = 0) => {
       return (
         <Menu.Item key={menuItem.key} icon={menuItem.icon}>
           <Link ref={refs[currentShortcut - 1]} to={menuItem.path}>
-            {menuItem.label}{' '}
-            <small style={{ color: 'grey' }}>(Shift + {currentShortcut})</small>
+            {menuItem.label}{" "}
+            <small style={{ color: "grey" }}>(Shift + {currentShortcut})</small>
           </Link>
         </Menu.Item>
       );

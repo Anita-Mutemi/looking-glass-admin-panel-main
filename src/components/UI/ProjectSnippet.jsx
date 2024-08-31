@@ -1,6 +1,7 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import { Card, Collapse, Typography, Row, Descriptions, Tabs, Avatar } from 'antd';
-import Signals from './ProjectSignals';
+import Signals from "../../../components/UI/ProjectSignals";
 
 const { Panel } = Collapse;
 

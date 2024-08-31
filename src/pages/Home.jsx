@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import ParsingStats from '../components/Analytics/ParsingStats';
 import TaggingStats from '../components/Analytics/TaggingStats';
 import Filters from '../components/Filters';
