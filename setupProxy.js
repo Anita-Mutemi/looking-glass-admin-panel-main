@@ -4,7 +4,7 @@ export default function (app) {
   app.use(
     ['/', '/login', '/auth', '/v1', '/projects', '/me', '/v1/projects'],
     proxy({
-      target: 'https://crmv2.alphaterminal.pro',
+      target: 'http://127.0.0.1:8000',
       changeOrigin: true,
     }),
   );
